@@ -1,0 +1,11 @@
+{
+  "name": "Algorithms",
+  "version": "0.0.0",
+  "description": "My own implementation of common sorting algorithms, for understanding purposes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "= <=>",
+  "license": "MIT"
+}
