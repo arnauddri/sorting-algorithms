@@ -14,28 +14,21 @@ func main() {
 
 func quick_sort(arr []int) []int {
 	var recurse func(left int, right int)
-	var swap func(i int, j int)
 	var partition func(left int, right int, pivot int) int
-
-	swap = func(i int, j int) {
-		var temp = arr[i]
-		arr[i] = arr[j]
-		arr[j] = temp
-	}
 
 	partition = func(left int, right int, pivot int) int {
 		v := arr[pivot]
 		right--
-		swap(pivot, right)
+		arr[pivot], arr[right] = arr[right], arr[pivot]
 
 		for i := left; i < right; i++ {
 			if arr[i] <= v {
-				swap(i, left)
+				arr[i], arr[left] = arr[left], arr[i]
 				left++
 			}
 		}
 
-		swap(left, right)
+		arr[left], arr[right] = arr[right], arr[left]
 		return left
 	}
 
